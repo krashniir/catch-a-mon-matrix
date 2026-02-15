@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Damage Matrix</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <h1 class="title">🐾 Pet Damage Matrix</h1>
+
+    <!-- BEST PET -->
+    <div id="bestPetCard" class="card hidden">
+      <div id="bestPetName" class="best-name"></div>
+      <div id="bestPetMultiplier" class="best-multiplier"></div>
+    </div>
+
+    <!-- ADD ENTRY -->
+    <div class="card form-card">
+      <input id="petNameInput" type="text" placeholder="Pet Name">
+      <input id="levelInput" type="number" placeholder="Level">
+      <input id="damageInput" type="number" placeholder="Damage">
+      <button id="addBtn">Add Entry</button>
+      <div style="margin-top: 1rem; width: 100%; border-top: 1px solid #d1d5db; padding-top: 1rem;">
+        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Import Data:</label>
+        <textarea id="importData" placeholder="Paste exported data here" style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid #d1d5db; font-size: 0.9rem; font-family: monospace; margin-bottom: 0.5rem; height: 100px; resize: vertical;"></textarea>
+        <button id="importBtn" style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: none; background-color: #3b82f6; color: white; font-weight: 600; cursor: pointer; transition: background 0.2s;">Import</button>
+        <button id="exportBtn" style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: none; background-color: #8b5cf6; color: white; font-weight: 600; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem;">Export Data</button>
+      </div>
+    </div>
+
+    <!-- GRAPH -->
+    <div class="card graph-card">
+      <div class="controls">
+        <div>
+          <label>Show Pet in Graph:</label>
+          <select id="selectedPet">
+            <option value="ALL">All Pets</option>
+          </select>
+        </div>
+        <div>
+          <label>Max Level Projection: <span id="maxProjectionLabel">50</span></label>
+          <input type="range" id="maxProjection" min="10" max="200" value="50">
+        </div>
+      </div>
+      <canvas id="damageChart"></canvas>
+    </div>
+
+    <!-- DATA TABLE -->
+    <div class="card overflow-auto" id="petTableContainer">
+      <table id="petTable"></table>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
