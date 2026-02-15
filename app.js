@@ -171,12 +171,33 @@ importBtn.addEventListener('click', () => {
       savePets();
       importData.value = '';
       render();
-      alert('Data imported successfully!');
+      Toastify({
+        text: 'Data imported successfully!',
+        duration: 1500,
+        gravity: 'top',
+        position: 'right',
+        backgroundColor: '#16a34a',
+        stopOnFocus: true
+      }).showToast();
     } else {
-      alert('Invalid data format');
+      Toastify({
+        text: 'Invalid data format',
+        duration: 1500,
+        gravity: 'top',
+        position: 'right',
+        backgroundColor: '#dc2626',
+        stopOnFocus: true
+      }).showToast();
     }
   } catch (e) {
-    alert('Error parsing data: ' + e.message);
+    Toastify({
+      text: 'Error parsing data: ' + e.message,
+      duration: 1500,
+      gravity: 'top',
+      position: 'right',
+      backgroundColor: '#dc2626',
+      stopOnFocus: true
+    }).showToast();
   }
 });
 
@@ -185,7 +206,14 @@ exportBtn.addEventListener('click', () => {
   importData.value = dataStr;
   importData.select();
   document.execCommand('copy');
-  alert('Data copied to clipboard!');
+  Toastify({
+    text: 'Data copied to clipboard!',
+    duration: 1500,
+    gravity: 'top',
+    position: 'right',
+    backgroundColor: '#3b82f6',
+    stopOnFocus: true
+  }).showToast();
 });
 
 // INITIAL
