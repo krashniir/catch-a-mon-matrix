@@ -15,7 +15,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  align-items: center; /* center everything */
+  align-items: center;
+  /* center everything */
 }
 
 /* TITLE */
@@ -26,12 +27,18 @@ body {
   color: #1f2937;
 }
 
+.title-subtext {
+  text-align: center;
+  color: #6b7280;
+  margin-top: -1rem;
+}
+
 /* CARD */
 .card {
   background-color: white;
   border-radius: 1rem;
   padding: 1.5rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   width: 100%;
   max-width: 1000px;
@@ -49,7 +56,7 @@ body {
 
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* BEST PET */
@@ -92,7 +99,7 @@ body {
 .search-section input:focus {
   outline: none;
   border-color: #16a34a;
-  box-shadow: 0 0 0 3px rgba(22,163,74,0.1);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
 }
 
 .filter-section {
@@ -130,7 +137,7 @@ body {
 .filter-group select:focus {
   outline: none;
   border-color: #16a34a;
-  box-shadow: 0 0 0 3px rgba(22,163,74,0.1);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
 }
 
 .level-range-inputs {
@@ -152,7 +159,7 @@ body {
 .level-range-inputs input:focus {
   outline: none;
   border-color: #16a34a;
-  box-shadow: 0 0 0 3px rgba(22,163,74,0.1);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
 }
 
 .level-range-inputs input::-webkit-outer-spin-button,
@@ -202,7 +209,7 @@ body {
 .form-card input:focus {
   outline: none;
   border-color: #16a34a;
-  box-shadow: 0 0 0 3px rgba(22,163,74,0.2);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
 }
 
 .form-card button {
@@ -230,7 +237,8 @@ table {
   font-size: 0.85rem;
 }
 
-th, td {
+th,
+td {
   padding: 0.35rem 0.2rem;
   border-bottom: 1px solid #e5e7eb;
 }
@@ -463,7 +471,7 @@ th {
 .pet-selector-group select:focus {
   outline: none;
   border-color: #16a34a;
-  box-shadow: 0 0 0 3px rgba(22,163,74,0.1);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
 }
 
 .remove-pet-btn {
@@ -552,11 +560,13 @@ canvas {
 
 /* TABLE RESPONSIVENESS */
 @media (max-width: 768px) {
-  th, td {
+
+  th,
+  td {
     padding: 0.25rem 0.15rem;
     font-size: 0.75rem;
   }
-  
+
   .filter-section {
     flex-direction: column;
     gap: 0.75rem;
@@ -604,7 +614,7 @@ canvas {
 
 .devWatermark {
   /* Fixed position keeps watermark in place */
-  position: fixed;  
+  position: fixed;
   bottom: 10px;
   right: 10px;
 
