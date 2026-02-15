@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pet Damage Matrix</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </head>
 <body>
 
@@ -15,6 +13,42 @@
 
     <!-- HEADER -->
     <h1 class="title">🐾 Pet Damage Matrix</h1>
+    <p style="text-align: center; color: #6b7280; margin-top: -1rem;">Official Pet Stats from Developer</p>
+
+    <!-- FILTERS & SEARCH -->
+    <div class="card filter-card">
+      <div class="search-section">
+        <input type="text" id="searchInput" placeholder="🔍 Search pets by name...">
+      </div>
+      <div class="filter-section">
+        <div class="filter-group">
+          <label>Rarity:</label>
+          <select id="rarityFilter">
+            <option value="ALL">All Pets</option>
+            <option value="REGULAR">Regular</option>
+            <option value="LEGENDARY">Legendary ⭐</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Sort By:</label>
+          <select id="sortFilter">
+            <option value="DAMAGE">Base Damage</option>
+            <option value="HEALTH">Base Health</option>
+            <option value="SELL">Sell Amount</option>
+            <option value="NAME">Pet Name</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Level Range:</label>
+          <div class="level-range-inputs">
+            <input type="number" id="levelStart" min="1" max="100" value="1" placeholder="Start">
+            <span class="range-separator">to</span>
+            <input type="number" id="levelEnd" min="1" max="100" value="20" placeholder="End">
+          </div>
+        </div>
+        <button id="clearFilters" class="filter-btn">Clear Filters</button>
+      </div>
+    </div>
 
     <!-- BEST PET -->
     <div id="bestPetCard" class="card hidden">
@@ -22,33 +56,21 @@
       <div id="bestPetMultiplier" class="best-multiplier"></div>
     </div>
 
-    <!-- ADD ENTRY -->
-    <div class="card form-card">
-      <input id="petNameInput" type="text" placeholder="Pet Name">
-      <input id="levelInput" type="number" placeholder="Level">
-      <input id="damageInput" type="number" placeholder="Damage">
-      <button id="addBtn">Add Entry</button>
-      <div style="margin-top: 1rem; width: 100%; border-top: 1px solid #d1d5db; padding-top: 1rem;">
-        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Import Data:</label>
-        <textarea id="importData" placeholder="Paste exported data here" style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid #d1d5db; font-size: 0.9rem; font-family: monospace; margin-bottom: 0.5rem; height: 100px; resize: vertical;"></textarea>
-        <button id="importBtn" style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: none; background-color: #3b82f6; color: white; font-weight: 600; cursor: pointer; transition: background 0.2s;">Import</button>
-        <button id="exportBtn" style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: none; background-color: #8b5cf6; color: white; font-weight: 600; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem;">Export Data</button>
-      </div>
-    </div>
-
     <!-- GRAPH -->
     <div class="card graph-card">
       <div class="controls">
-        <div>
-          <label>Show Pet in Graph:</label>
-          <select id="selectedPet">
-            <option value="ALL">All Pets</option>
-          </select>
+        <div id="petComparisons" class="pet-comparisons">
+          <div class="pet-comparison-item">
+            <label>Compare Pet Damage:</label>
+            <div class="pet-selector-group">
+              <select class="petComparisonSelect" data-index="0">
+                <option value="ALL">All Pets</option>
+              </select>
+              <button class="remove-pet-btn" style="display:none;">✕</button>
+            </div>
+          </div>
         </div>
-        <div>
-          <label>Max Level Projection: <span id="maxProjectionLabel">50</span></label>
-          <input type="range" id="maxProjection" min="10" max="200" value="50">
-        </div>
+        <button id="addPetComparison" class="add-pet-btn">+ Add Pet</button>
       </div>
       <canvas id="damageChart"></canvas>
     </div>
@@ -60,6 +82,22 @@
 
   </div>
 
-  <script src="app.js"></script>
+  <!-- SILLY WATERMARK -->
+  <div>
+    <div class="devWatermark">
+      <div class="devContributors">
+        <p>Krashniir — DEV</p>
+      </div>
+      <div class="devThankings">
+        <p>A huge thanks to Cyronez for giving me the exact values!</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { OFFICIAL_PETS } from './petsData.js';
+    window.OFFICIAL_PETS = OFFICIAL_PETS; // Make it globally accessible
+  </script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

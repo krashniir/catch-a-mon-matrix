@@ -1,0 +1,23 @@
+// petsData.js
+export const OFFICIAL_PETS = {
+    TweetleBird: { BaseHealth: 25, BaseDamage: 3, SellAmount: 10 },
+    Petalynx: { BaseHealth: 28, BaseDamage: 4, SellAmount: 20 },
+    Watoad: { BaseHealth: 28, BaseDamage: 5, SellAmount: 30 },
+    Scoreglass: { BaseHealth: 29, BaseDamage: 5, SellAmount: 40 },
+    Googly: { BaseHealth: 30, BaseDamage: 5.5, SellAmount: 50 },
+    Fraillure: { BaseHealth: 31, BaseDamage: 6, SellAmount: 60 },
+    Crylat: { BaseHealth: 32, BaseDamage: 6.5, SellAmount: 70 },
+    Basalith: { BaseHealth: 50, BaseDamage: 11, SellAmount: 80 },
+    Wobbly: { BaseHealth: 55, BaseDamage: 12, SellAmount: 90 },
+    Smeltrix: { BaseHealth: 60, BaseDamage: 13, SellAmount: 100 },
+    Volcore: { BaseHealth: 63, BaseDamage: 14, SellAmount: 110 },
+    Toxican: { BaseHealth: 65, BaseDamage: 15, SellAmount: 120 },
+    Spidercle: { BaseHealth: 70, BaseDamage: 16, SellAmount: 130 },
+    Awesaflame: { BaseHealth: 65, BaseDamage: 15, SellAmount: 120 },
+    Embergeck: { BaseHealth: 75, BaseDamage: 17, SellAmount: 140 },
+    Corbin: { BaseHealth: 80, BaseDamage: 25, SellAmount: 150 },
+    Cocotooth: { BaseHealth: 90, BaseDamage: 20, SellAmount: 160 },
+    Vichomp: { BaseHealth: 100, BaseDamage: 25, SellAmount: 170 },
+    Cyrazor: { BaseHealth: 35, BaseDamage: 7, SellAmount: 1000, Legendary: true },
+    Cacklebarrow: { BaseHealth: 70, BaseDamage: 15, SellAmount: 1000, Legendary: true },
+}
